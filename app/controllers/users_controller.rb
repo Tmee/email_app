@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show]
 
-  def home
+  def new
     @user = User.new
   end
 
   def create
-    user ||= User.create(user_params)
+    user = User.create(user_params)
     if user.save
       UserMailer.created_email(user).deliver
-      redirect_to '/'
+      redirect_to users_path(user.id)
     end
   end
 
@@ -27,5 +28,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :name, :password)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

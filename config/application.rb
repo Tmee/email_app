@@ -19,7 +19,7 @@ module UserEmail
       address:              'smtp.mandrillapp.com',
       port:                 '587',
       user_name:            'tjmee90@gmail.com',
-      password:             'wimU7A8sZFnb0MXSSRVJxA',
+      password:             '1eGUi0piNNwYmniCsI0QhQ',
       authentication:       'plain',
       enable_starttls_auto: true
     }
