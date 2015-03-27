@@ -1,0 +1,7 @@
+class User < ActiveRecord::Base
+  validates_presence_of :name, :email, :password
+
+  def send_email(recipient, subject, body)
+    UserMailer.send_email(name, recipient.email, subject, body).deliver_now
+  end
+end
