@@ -1,0 +1,31 @@
+<h1>Hi <%= @user.name %></h1>
+
+<h3>Send an email</h3>
+
+<div class="row text-center">
+  <hr/><h1>Email Sender</h1><hr/>
+
+
+  <div class='panel'>
+    <h3>Send an email</h3><br>
+    <%= form_tag action: "send_email", :html => {:'data-abide' => true} do %>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= text_field_tag :user_name, params[:user_name], placeholder: "Your Name", :required => true %>
+        </div>
+        <div class="large-6 columns">
+          <%= text_field_tag :recipent_email, params[:recipent_email], placeholder: "Recipent Email", :required => true %>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="large-12 columns">
+          <%= text_field_tag :subject, params[:subject], placeholder: "Subject", :required => true %>
+          <textarea placeholder="Body"></textarea>
+        </div>
+        <div class="large-4 columns">
+          <button class="round alert button expand" id="click_search" name="search_button" type="submit" value="Search">Send</button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

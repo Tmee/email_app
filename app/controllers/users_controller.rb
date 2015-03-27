@@ -1,11 +1,25 @@
 class UsersController < ApplicationController
 
+  def home
+    @user = User.new
+  end
+
   def create
-    user = User.create(user_params)
+    user ||= User.create(user_params)
     if user.save
-      UserMailer.send_email(user).deliver
+      UserMailer.created_email(user).deliver
       redirect_to '/'
     end
+  end
+
+  def show
+    @user = current_user
+  end
+
+  def send_email
+    binding.pry
+    UserMailer.send_email(params[:user_name],params[:recipient], params[:subject], params[:body])
+    redirect_to users_path(current_user.id)
   end
 
   private
