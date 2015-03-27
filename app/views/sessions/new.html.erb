@@ -1,0 +1,18 @@
+<div class="row text-center">
+  <hr/><h1>EmailService</h1>
+  <h2>Welcome, Please sign or Register</h2><hr/>
+</div>
+<div class="row text-center">
+  <div class="large-6 columns panel">
+    <%= form_for(@user, url: '/login') do |form| %>
+      <%= form.label :email %><br>
+      <%= form.email_field :email %><br>
+      <%= form.label :password %><br>
+      <%= form.password_field :password %>
+      <%= form.submit "Login" %>
+    <% end %><br>
+  </div>
+  <div class="large-6 columns">
+  whwere is this
+  </div>
+</div>
