@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe UserMailer, type: :mailer do
-   it 'sends an email when fields are submitted' do
-    UserMailer.send_email("Tim", "tjmee90@gmail.com", "This is a testing thing", "and the body").deliver_now
+   it 'sends an email to another email address' do
+    UserMailer.send_email("Tim", "tjmee90@gmail.com", "This is a testing thing", "and the body goes here").deliver_now
     result = ActionMailer::Base.deliveries.last
 
     expect(result).not_to be_nil
