@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-    if user.save
-      session[:user_id] = user.id
-      UserMailer.created_email(user).deliver_now
-      redirect_to user_path(user)
+    @user = User.create(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      UserMailer.created_email(@user).deliver_now
+      redirect_to user_path(@user)
     end
   end
 
