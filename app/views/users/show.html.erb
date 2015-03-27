@@ -1,14 +1,14 @@
-<h1>Hi <%= @user.name %></h1>
-
-<h3>Send an email</h3>
-
+<div class="row">
+  <h1>Hello, <%= @user.name %></h1>
+  <h3>Send an email</h3>
+</div>
 <div class="row text-center">
   <hr/><h1>Email Sender</h1><hr/>
 
 
   <div class='panel'>
-    <h3>Send an email</h3><br>
-    <%= form_for @user, :url => { :action => "send_email" }, :html => {:'data-abide' => true} do %>
+    <h3>Email Form</h3><br>
+    <%= form_tag :method => "post", :action => "send_email" , :html => {:'data-abide' => true} do %>
       <div class="row">
         <div class="large-6 columns">
           <%= text_field_tag :user_name, params[:user_name], placeholder: "Your Name", :required => true %>
@@ -20,7 +20,7 @@
       <div class="row">
         <div class="large-12 columns">
           <%= text_field_tag :subject, params[:subject], placeholder: "Subject", :required => true %>
-          <textarea placeholder="Body"></textarea>
+          <%= text_field_tag :body, params[:body], placeholder: "Body"%>
         </div>
         <div class="large-4 columns">
           <button class="round alert button expand" id="click_search" name="search_button" type="submit" value="Search">Send</button>
@@ -28,4 +28,5 @@
       </div>
     <% end %>
   </div>
+</div>
 </div>

@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     if user.save
-      UserMailer.created_email(user).deliver
-      redirect_to users_path(user.id)
+      session[:user_id] = user.id
+      UserMailer.created_email(user).deliver_now
+      redirect_to user_path(user)
     end
   end
 
@@ -18,9 +19,8 @@ class UsersController < ApplicationController
   end
 
   def send_email
-    binding.pry
-    UserMailer.send_email(params[:user_name],params[:recipient], params[:subject], params[:body])
-    redirect_to users_path(current_user.id)
+    UserMailer.send_email(params[:user_name],params[:recipient], params[:subject], params[:body]).deliver_now
+    redirect_to user_path(current_user)
   end
 
   private
