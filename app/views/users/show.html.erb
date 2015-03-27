@@ -8,7 +8,7 @@
 
   <div class='panel'>
     <h3>Send an email</h3><br>
-    <%= form_tag action: "send_email", :html => {:'data-abide' => true} do %>
+    <%= form_for @user, :url => { :action => "send_email" }, :html => {:'data-abide' => true} do %>
       <div class="row">
         <div class="large-6 columns">
           <%= text_field_tag :user_name, params[:user_name], placeholder: "Your Name", :required => true %>
