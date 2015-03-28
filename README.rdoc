@@ -1,6 +1,6 @@
 == Simple Email messaging system
 
-+ uses Mandrill for smtp emailing
-+ Foundation as css framework 
++uses Mandrill for smtp emailing
++Foundation as css framework 
 
 
