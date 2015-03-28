@@ -1,4 +1,4 @@
-class UserMailer < ApplicationMailer
+class UserMailer < ActionMailer::Base
   default :from => "EmailSerice@emailer.com"
 
   def send_email(sender, recipient, subject, body)
