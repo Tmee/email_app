@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def send_email
-    UserMailer.send_email(params[:user_name],params[:recipient], params[:subject], params[:body]).deliver_now
+    UserMailer.send_email(params[:user_name], params[:recipient_email], params[:subject], params[:body]).deliver_now
     redirect_to user_path(current_user)
   end
 

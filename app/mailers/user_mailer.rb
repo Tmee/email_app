@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default :from => "example@example.com"
+  default :from => "EmailSerice@emailer.com"
 
   def send_email(sender, recipient, subject, body)
     @body   = body
