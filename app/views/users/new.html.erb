@@ -6,7 +6,7 @@
       <%= f.text_field :name, placeholder: 'Name', size: "60x60" %></br></br>
       <%= f.email_field :email, placeholder: 'Email', size: "20x30" %></br></br>
       <%= f.password_field :password, placeholder: 'Password', size: "20x30" %></br></br>
-      <button class="tiny round info button" type="submit">Register</button>
+      <%= f.submit "Register", class: "tiny round info button" %>
     <% end %>
   </div>
 </div>

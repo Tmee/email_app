@@ -4,12 +4,12 @@
 </div>
 <div class="row text-center">
   <div class="large-6 columns panel">
-    <%= form_for(@user, url: '/login') do |form| %>
-      <%= form.label :email %><br>
-      <%= form.email_field :email %><br>
-      <%= form.label :password %><br>
-      <%= form.password_field :password %>
-      <button class="tiny round info button" type="submit">Login</button>
+    <%= form_for(@user, url: '/login') do |f| %>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %><br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+      <%= f.submit "Login", class: "tiny round info button" %>
     <% end %><br>
   </div>
   <div class="large-6 columns">
