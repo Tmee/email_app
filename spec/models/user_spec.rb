@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
 
     expect(result).not_to be_nil
     expect(result.to).to include 'simple@example.com'
-    expect(result.from).to include 'example@example.com'
+    expect(result.from).to include 'EmailSerice@emailer.com'
     expect(result.subject).to eq 'This is a testing thing'
   end
 end

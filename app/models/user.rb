@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   def send_email(recipient, subject, body)
     UserMailer.send_email(name, recipient, subject, body).deliver_now
   end
+
 end

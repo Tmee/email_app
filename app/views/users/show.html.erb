@@ -1,6 +1,11 @@
 <div class="row">
-  <h1>Hello, <%= @user.name %></h1>
-  <h3>Send an email</h3>
+  <div class="large-6 columns">
+    <h1>Hello, <%= @user.name %></h1>
+    <h3>Send an email</h3>
+  </div>
+  <div class="large-6 columns text-right logout">
+    <%= link_to "Logout", logout_path, method: :delete,  class: "small round button info" %>
+  </div>
 </div>
 <div class="row text-center">
   <hr/><h1>Email Sender</h1><hr/>
@@ -14,7 +19,7 @@
           <%= text_field_tag :user_name, params[:user_name], placeholder: "Your Name", :required => true %>
         </div>
         <div class="large-6 columns">
-          <%= text_field_tag :recipent_email, params[:recipent_email], placeholder: "Recipent Email", :required => true %>
+          <%= text_field_tag :recipient_email, params[:recipient_email], placeholder: "Recipient Email", :required => true %>
         </div>
       </div><br>
       <div class="row">

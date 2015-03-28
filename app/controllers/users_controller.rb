@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
 
   def new
     @user = User.new
@@ -19,18 +18,14 @@ class UsersController < ApplicationController
   end
 
   def send_email
-    UserMailer.send_email(params[:user_name],params[:recipient], params[:subject], params[:body]).deliver_now
+    UserMailer.send_email(params[:user_name], params[:recipient_email], params[:subject], params[:body]).deliver_now
     redirect_to user_path(current_user)
   end
 
   private
 
-
   def user_params
     params.require(:user).permit(:email, :name, :password)
   end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
 end
