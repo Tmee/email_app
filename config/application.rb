@@ -13,7 +13,7 @@ Bundler.require(*Rails.groups)
 
 module UserEmail
   class Application < Rails::Application
-   config.action_mailer.delivery_method = :smtp
+    config.action_mailer.delivery_method = :smtp
 
     config.action_mailer.smtp_settings = {
       address:              'smtp.mandrillapp.com',
