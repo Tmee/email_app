@@ -18,11 +18,24 @@ class UsersController < ApplicationController
   end
 
   def send_email
-    UserMailer.send_email(params[:user_name], params[:recipient_email], params[:subject], params[:body]).deliver_now
+    current_user.send_email(recipient, subject, body)
     redirect_to user_path(current_user)
   end
 
   private
+
+
+  def recipient
+    params[:recipient_email]
+  end
+
+  def subject
+    params[:subject]
+  end
+
+  def body
+    params[:body]
+  end
 
   def user_params
     params.require(:user).permit(:email, :name, :password)
