@@ -15,16 +15,13 @@
     <%= form_tag :method => "post", :action => "send_email" , :html => {:'data-abide' => true} do %>
       <div class="row">
         <div class="large-6 columns">
-          <%= text_field_tag :user_name, params[:user_name], placeholder: "Your Name", :required => true %>
-        </div>
-        <div class="large-6 columns">
           <%= text_field_tag :recipient_email, params[:recipient_email], placeholder: "Recipient Email", :required => true %>
         </div>
       </div><br>
       <div class="row">
         <div class="large-12 columns">
           <%= text_field_tag :subject, params[:subject], placeholder: "Subject", :required => true %>
-          <%= text_field_tag :body, params[:body], placeholder: "Body"%>
+          <%= text_area_tag :body, params[:body], class: "body", placeholder: "Body"%>
         </div>
         <div class="large-4 columns">
           <%= button_tag "Send", class: "round alert button expand" %>
