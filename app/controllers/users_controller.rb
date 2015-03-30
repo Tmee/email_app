@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
   private
 
-
   def recipient
     params[:recipient_email]
   end
