@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rspec-rails'
 gem 'foundation-rails'
+gem 'figaro'
 
 
 group :development, :test do
