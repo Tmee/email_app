@@ -19,7 +19,6 @@ module UserEmail
       address:              'smtp.mandrillapp.com',
       port:                 '587',
       user_name:            'tjmee90@gmail.com',
-      # api key would usually be in a secret file.
       password:             ENV["mandrill_key"],
       authentication:       'plain',
       enable_starttls_auto: true
